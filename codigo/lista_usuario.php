@@ -46,6 +46,7 @@
                 echo "<td>$email</td>";
                 echo "<td>$senha</td>";
                 echo "<td>$foto</td>";
+                echo "<td><a href='excluir_usuario.php?id=$id'>excluir</a></td>";
             echo "</tr>";
         }
             
