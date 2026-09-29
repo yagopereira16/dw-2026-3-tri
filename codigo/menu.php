@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <a target="conteudo" href="cad_usuario.php">Cadastro de Usuario</a> <br>
     
     <a target="conteudo" href="cad_postagem.php">Nova Postagem</a> <br>
     

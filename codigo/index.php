@@ -32,7 +32,11 @@
         Senha: <br>
         <input type="text" name="senha"> <br><br>
 
-        <input type="submit" value="Entrar">
+        <input type="submit" value="Entrar"><br><br><br>
+
+        <a href="cad_usuario.php" class="cadastrar">Cadastrar-se</a>
+
+
     </form>
 </body>
 </html>
