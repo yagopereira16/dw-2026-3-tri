@@ -1,3 +1,28 @@
+<?php
+require_once "../verifica_sessao.php";
+
+if (!isset($_GET['id'])) {
+    //formulário em branco
+    $id = 0;
+    $nome = "";
+    $area = "";
+    $carga_horaria = "";
+} else {
+    //formulário preenchido
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM curso WHERE idcurso = $id";
+
+    require_once "../conexao.php";
+    $resultado = mysqli_query($conexao, $sql);
+
+    $linha = mysqli_fetch_array($resultado);
+    $nome = $linha['nome'];
+    $area = $linha['area'];
+    $carga_horaria = $linha['carga_horaria'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,39 +33,6 @@
 <body>
     <h2>Cadastro de comentario</h2>
     <form action="salvar_comentario.php" method="GET">
-        ID usuario: <br>
-        <select name="idusuario">
-            <?php
-                require_once "conexao.php";
-
-                $sql = "SELECT * FROM usuario";
-
-                $resultados = mysqli_query($conexao, $sql);
-                while ($linha = mysqli_fetch_array($resultados)) {
-                    $idusuario = $linha['idusuario'];
-                    $nome = $linha['nome'];
-                    
-                    echo "<option value='$idusuario'>$nome</option>";
-                }
-            ?>
-        </select> <br>
-
-
-        ID postagem: <br>
-        <select name="idpostagem">
-            <?php
-                $sql = "SELECT * FROM postagem";
-                $resultados = mysqli_query($conexao, $sql);
-
-                while ($linha = mysqli_fetch_array($resultados)) {
-                    $idpostagem = $linha['idpostagem'];
-                    $nome = $linha['idpostagem'];
-
-                    echo "<option value='$idpostagem'>$nome</option>";
-                }
-            ?>
-        </select> <br>
-
         texto: <br>
         <input type="text" name="texto"> <br>
 

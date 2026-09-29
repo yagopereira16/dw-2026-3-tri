@@ -1,7 +1,7 @@
 <?php
 
-$id_usuario = $_GET['idusuario'];
-$id_postagem = $_GET['idpostagem'];
+$id_usuario = $_SESSION['idusuario'];
+$id_postagem = $_SESSION['idpostagem'];
 $texto = $_GET['texto'];
 
 $sql = "INSERT INTO comentario (idusuario,idpostagem,texto) VALUES ('$id_usuario','$id_postagem','$texto');";

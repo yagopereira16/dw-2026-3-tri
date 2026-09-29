@@ -1,9 +1,11 @@
 <?php
+session_start()
 
-$texto = $_GET['texto'];
 $id_usuario = $_GET['idusuario'];
+$texto = $_GET['texto'];
 
-$sql = "INSERT INTO postagem (texto, idusuario) VALUES ('$texto', '$id_usuario');";
+
+$sql = "INSERT INTO postagem (idusuario,texto) VALUES ($id_usuario, '$texto');";
 
 require_once "conexao.php";
 mysqli_query($conexao, $sql);
