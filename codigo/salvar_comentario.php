@@ -9,5 +9,5 @@ $sql = "INSERT INTO comentario (idusuario,idpostagem,texto) VALUES ('$id_usuario
 require_once "conexao.php";
 mysqli_query($conexao, $sql);
 
-header("Location: menu.php");
+header("Location: cad_comentario.php");
 ?>
