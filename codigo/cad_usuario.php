@@ -24,6 +24,7 @@
         <input type="text" name="foto"> <br>
 
         <input type="submit" value="Cadastrar">
+
     </form>
 </body>
 </html>

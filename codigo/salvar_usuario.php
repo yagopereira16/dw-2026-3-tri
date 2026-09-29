@@ -11,5 +11,5 @@ $sql = "INSERT INTO usuario (username, nome, email, senha, foto) VALUES ('$usern
 require_once "conexao.php";
 mysqli_query($conexao, $sql);
 
-header("Location: cad_usuario.php");
+header("Location: principal.php");
 ?>
