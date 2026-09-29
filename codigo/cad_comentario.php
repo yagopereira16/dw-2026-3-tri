@@ -6,22 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Cadastro de Postagem</h3>
-    <form action="salvar_usuario.php" method="GET">
-        Username: <br>
-        <input type="text" name="username"> <br>
+    <h2>Cadastro de comentario</h2>
+    <form action="salvar_comentario.php" method="GET">
+        ID usuario: <br>
+        <select name="idusuario">
+            <?php
+                require_once "conexao.php";
 
-        Nome: <br>
-        <input type="text" name="nome"> <br>
-        
-        Email: <br>
-        <input type="text" name="email"> <br>
+                $sql = "SELECT * FROM usuario";
 
-        Senha: <br>
-        <input type="text" name="senha"> <br>
-        
-        Foto: <br>
-        <input type="text" name="foto"> <br>
+                $resultados = mysqli_query($conexao, $sql);
+                while ($linha = mysqli_fetch_array($resultados)) {
+                    $idusuario = $linha['idusuario'];
+                    $nome = $linha['nome'];
+                    
+                    echo "<option value='$idusuario'>$nome</option>";
+                }
+            ?>
+        </select> <br>
+
+
+        ID postagem: <br>
+        <select name="idpostagem">
+            <?php
+                $sql = "SELECT * FROM postagem";
+                $resultados = mysqli_query($conexao, $sql);
+
+                while ($linha = mysqli_fetch_array($resultados)) {
+                    $idpostagem = $linha['idpostagem'];
+                    $nome = $linha['idpostagem'];
+
+                    echo "<option value='$idpostagem'>$nome</option>";
+                }
+            ?>
+        </select> <br>
+
+        texto: <br>
+        <input type="text" name="texto"> <br>
 
         <input type="submit" value="Cadastrar">
     </form>
