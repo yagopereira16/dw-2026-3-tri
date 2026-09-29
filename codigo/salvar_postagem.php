@@ -1,7 +1,7 @@
 <?php
 
 $texto = $_GET['texto'];
-$id_usuario = $_GET['id_usuario'];
+$id_usuario = $_GET['idusuario'];
 
 $sql = "INSERT INTO postagem (texto, idusuario) VALUES ('$texto', '$id_usuario');";
 
