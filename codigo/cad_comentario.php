@@ -1,5 +1,5 @@
 <?php
-require_once "../verifica_sessao.php";
+require_once "verifica_sessao.php";
 
 if (!isset($_GET['id'])) {
     //formulário em branco

@@ -40,8 +40,8 @@
             $foto = $linha['foto'];
 
             echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$username</td>";
+            echo "<td>$id</td>";
+            echo "<td>$username</td>";
                 echo "<td>$nome</td>";
                 echo "<td>$email</td>";
                 echo "<td>$senha</td>";
